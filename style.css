@@ -270,6 +270,10 @@ height:100vh;
 
 overflow:hidden;
 
+opacity:0;
+
+transition:2.5s;
+
 }
 
 #portada img{
@@ -510,6 +514,10 @@ MÚSICA
 padding:120px 8%;
 
 text-align:center;
+   
+opacity:0;
+
+transition:2s;
 
 }
 
