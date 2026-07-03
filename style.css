@@ -212,6 +212,8 @@ animation-fill-mode:forwards;
 
 #entrar{
 
+    display:none !important;
+
 margin-top:45px;
 
 padding:18px 45px;
