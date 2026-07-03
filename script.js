@@ -1,25 +1,58 @@
 // ==========================
-// BOTÓN DE ENTRADA
+// INTRO CINEMATOGRÁFICA
 // ==========================
 
 const loader = document.getElementById("loader");
-const entrar = document.getElementById("entrar");
 
-entrar.addEventListener("click", () => {
+const frases = document.querySelectorAll(".frase");
 
-    loader.style.opacity = "0";
+const animacionFinal = document.getElementById("animacionFinal");
+
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+
+    let tiempo = 500;
+
+    frases.forEach((frase) => {
+
+        setTimeout(() => {
+
+            frase.classList.add("visible");
+
+        }, tiempo);
+
+        setTimeout(() => {
+
+            frase.classList.remove("visible");
+            frase.classList.add("ocultar");
+
+        }, tiempo + 2200);
+
+        tiempo += 2600;
+
+    });
+
+    setTimeout(() => {
+
+        animacionFinal.classList.add("visible");
+
+    }, tiempo);
+
+    setTimeout(() => {
+
+        loader.style.opacity = "0";
+
+    }, tiempo + 5000);
 
     setTimeout(() => {
 
         loader.style.display = "none";
+        document.body.style.overflow = "auto";
 
-        document.body.style.overflowY = "auto";
-
-    },1000);
+    }, tiempo + 6500);
 
 });
-
-document.body.style.overflow="hidden";
 
 
 // ==========================
