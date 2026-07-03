@@ -366,7 +366,34 @@ rgba(0,0,0,.55)
 )`;
 
 },60);
+// ==========================
+// CONTADOR
+// ==========================
 
+// Año, Mes (0=enero, 1=febrero...), Día
+const fechaInicio = new Date(2024, 9, 1);
+
+const hoy = new Date();
+
+let años = hoy.getFullYear() - fechaInicio.getFullYear();
+let meses = hoy.getMonth() - fechaInicio.getMonth();
+let dias = hoy.getDate() - fechaInicio.getDate();
+
+if (dias < 0) {
+    meses--;
+    const ultimoMes = new Date(hoy.getFullYear(), hoy.getMonth(), 0);
+    dias += ultimoMes.getDate();
+}
+
+if (meses < 0) {
+    años--;
+    meses += 12;
+}
+
+document.getElementById("diasJuntos").innerHTML =
+`<strong>${años}</strong> años,
+<strong>${meses}</strong> meses y
+<strong>${dias}</strong> días ❤️`;
 
 // ==========================
 // MENSAJE FINAL
