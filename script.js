@@ -66,6 +66,11 @@ iterations:4
 
         loader.style.display = "none";
         document.getElementById("portada").style.opacity="1";
+        setTimeout(()=>{
+
+document.getElementById("musica").style.opacity="1";
+
+},2500);
         document.body.style.overflow = "auto";
 
     }, tiempo + 6500);
