@@ -12,70 +12,78 @@ body{
     font-family:'Poppins',sans-serif;
     background:#f8f4ef;
     color:#3b3028;
+    overflow-x:hidden;
 }
 
-#inicio{
+section{
+    padding:90px 8%;
+}
+
+h1,h2,h3{
+    font-family:'Cormorant Garamond',serif;
+}
+
+#loader{
+    width:100%;
+    height:100vh;
     background:#000;
     color:white;
-    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    overflow:hidden;
 }
 
-#intro{
+.intro{
     width:90%;
-    max-width:800px;
+    max-width:700px;
 }
 
-.frase{
+.intro h3{
     font-size:2rem;
-    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
     margin-bottom:40px;
-    opacity:0;
-    animation:aparecer 2s forwards;
+    animation:fade 2s;
 }
 
 #hilo{
-    margin:auto;
-    display:block;
+    width:100%;
+    margin:25px 0;
 }
 
 #linea{
     fill:none;
-    stroke:#b30000;
-    stroke-width:3;
+    stroke:#c50000;
+    stroke-width:4;
     stroke-dasharray:1000;
     stroke-dashoffset:1000;
-    animation:dibujar 5s linear forwards;
+    animation:draw 5s linear forwards;
 }
 
 #corazon{
-    font-size:50px;
-    color:red;
+    font-size:55px;
+    color:#ff2f5a;
     opacity:0;
-    margin:30px;
-    animation:corazon 2s forwards;
+    animation:heart .8s forwards;
     animation-delay:5s;
 }
 
-#comenzar{
+#entrar{
+    margin-top:40px;
+    padding:16px 40px;
+    border:none;
+    border-radius:40px;
     background:#b30000;
     color:white;
-    border:none;
-    padding:15px 35px;
-    border-radius:40px;
-    font-size:18px;
     cursor:pointer;
+    font-size:18px;
     opacity:0;
-    animation:boton 2s forwards;
+    animation:show 1s forwards;
     animation-delay:6s;
 }
 
-#comenzar:hover{
-    background:#8d0000;
+#entrar:hover{
+    background:#8f0000;
 }
 
 #portada{
@@ -89,13 +97,13 @@ body{
     object-fit:cover;
 }
 
-.oscuro{
+.capa{
     position:absolute;
     inset:0;
     background:rgba(0,0,0,.45);
 }
 
-.texto{
+.contenido{
     position:absolute;
     inset:0;
     display:flex;
@@ -104,60 +112,144 @@ body{
     align-items:center;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:30px;
 }
 
-.texto h1{
-    font-size:4rem;
-    font-family:'Cormorant Garamond',serif;
+.contenido h1{
+    font-size:70px;
+    letter-spacing:4px;
 }
 
-.texto p{
-    margin-top:20px;
-    max-width:700px;
+.contenido p{
+    margin-top:25px;
+    max-width:650px;
     line-height:1.8;
+    font-size:18px;
 }
 
-.texto a{
+.contenido a{
+    margin-top:50px;
     color:white;
     text-decoration:none;
-    margin-top:50px;
-    font-size:35px;
+    border:1px solid white;
+    padding:15px 35px;
+    border-radius:40px;
+    transition:.3s;
 }
 
-#teoria{
-    padding:90px 10%;
-    line-height:2;
+.contenido a:hover{
+    background:white;
+    color:black;
 }
 
-#teoria h2{
+#teoria h2,
+#galeria h2,
+#musica h2,
+#final h2{
     text-align:center;
-    font-size:3rem;
+    font-size:50px;
     margin-bottom:40px;
-    font-family:'Cormorant Garamond',serif;
 }
 
-@keyframes dibujar{
+#teoria p,
+#final p{
+    max-width:800px;
+    margin:auto;
+    line-height:2;
+    text-align:center;
+    font-size:18px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.grid img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:.4s;
+    cursor:pointer;
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.grid img:hover{
+    transform:scale(1.04);
+}
+
+#musica{
+    text-align:center;
+}
+
+#spotify{
+    display:inline-block;
+    padding:18px 40px;
+    border-radius:50px;
+    background:#1DB954;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+#spotify:hover{
+    transform:scale(1.05);
+}
+
+#final{
+    background:#efe8df;
+}
+
+@keyframes draw{
     to{
         stroke-dashoffset:0;
     }
 }
 
-@keyframes aparecer{
+@keyframes fade{
+    from{
+        opacity:0;
+    }
     to{
         opacity:1;
     }
 }
 
-@keyframes corazon{
+@keyframes show{
     to{
         opacity:1;
-        transform:scale(1.2);
     }
 }
 
-@keyframes boton{
+@keyframes heart{
     to{
         opacity:1;
+        transform:scale(1.25);
     }
+}
+
+@media(max-width:768px){
+
+.contenido h1{
+font-size:46px;
+}
+
+.contenido p{
+font-size:16px;
+}
+
+#teoria h2,
+#galeria h2,
+#musica h2,
+#final h2{
+font-size:38px;
+}
+
+.grid img{
+height:340px;
+}
+
 }
