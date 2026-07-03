@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f4ef;
+    color:#3b3028;
+}
+
+#inicio{
+    background:#000;
+    color:white;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+#intro{
+    width:90%;
+    max-width:800px;
+}
+
+.frase{
+    font-size:2rem;
+    font-family:'Cormorant Garamond',serif;
+    margin-bottom:40px;
+    opacity:0;
+    animation:aparecer 2s forwards;
+}
+
+#hilo{
+    margin:auto;
+    display:block;
+}
+
+#linea{
+    fill:none;
+    stroke:#b30000;
+    stroke-width:3;
+    stroke-dasharray:1000;
+    stroke-dashoffset:1000;
+    animation:dibujar 5s linear forwards;
+}
+
+#corazon{
+    font-size:50px;
+    color:red;
+    opacity:0;
+    margin:30px;
+    animation:corazon 2s forwards;
+    animation-delay:5s;
+}
+
+#comenzar{
+    background:#b30000;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+    opacity:0;
+    animation:boton 2s forwards;
+    animation-delay:6s;
+}
+
+#comenzar:hover{
+    background:#8d0000;
+}
+
+#portada{
+    position:relative;
+    height:100vh;
+}
+
+#portada img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.oscuro{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.texto{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.texto h1{
+    font-size:4rem;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.texto p{
+    margin-top:20px;
+    max-width:700px;
+    line-height:1.8;
+}
+
+.texto a{
+    color:white;
+    text-decoration:none;
+    margin-top:50px;
+    font-size:35px;
+}
+
+#teoria{
+    padding:90px 10%;
+    line-height:2;
+}
+
+#teoria h2{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:40px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+@keyframes dibujar{
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+@keyframes aparecer{
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes corazon{
+    to{
+        opacity:1;
+        transform:scale(1.2);
+    }
+}
+
+@keyframes boton{
+    to{
+        opacity:1;
+    }
+}
