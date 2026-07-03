@@ -36,11 +36,28 @@ window.addEventListener("load", () => {
     setTimeout(() => {
 
         animacionFinal.classList.add("visible");
+        corazon.style.display="block";
+
+corazon.animate([
+
+{transform:"scale(1)"},
+
+{transform:"scale(1.35)"},
+
+{transform:"scale(1)"}
+
+],{
+
+duration:900,
+
+iterations:4
+
+});
 
     }, tiempo);
 
     setTimeout(() => {
-
+        iniciarPetalos();
         loader.style.opacity = "0";
 
     }, tiempo + 5000);
@@ -48,6 +65,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
 
         loader.style.display = "none";
+        document.getElementById("portada").style.opacity="1";
         document.body.style.overflow = "auto";
 
     }, tiempo + 6500);
@@ -133,17 +151,23 @@ function crearPetalo(){
 
 }
 
-for(let i=0;i<25;i++){
+let lluviaPetalos = null;
 
-    crearPetalo();
+function iniciarPetalos(){
+
+    for(let i=0;i<25;i++){
+
+        crearPetalo();
+
+    }
+
+    lluviaPetalos = setInterval(()=>{
+
+        crearPetalo();
+
+    },700);
 
 }
-
-setInterval(()=>{
-
-    crearPetalo();
-
-},700);
 
 
 // ==========================
