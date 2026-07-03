@@ -1001,3 +1001,32 @@ font-size:20px;
 line-height:2.1;
 
 }
+#contador{
+
+padding:110px 8%;
+
+text-align:center;
+
+}
+
+#contador h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:56px;
+
+margin-bottom:30px;
+
+color:#8d0f2c;
+
+}
+
+#diasJuntos{
+
+font-size:28px;
+
+font-weight:500;
+
+line-height:2;
+
+}
