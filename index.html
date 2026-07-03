@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>El Hilo Rojo</title>
+<title>El Hilo Rojo ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -19,98 +15,77 @@
 
 <div id="loader">
 
-<div class="mensaje">
+    <div class="intro">
 
-<p class="linea1">
-Dicen que existe un hilo rojo invisible...
-</p>
+        <h3>Dicen que existe un hilo rojo invisible...</h3>
 
-<p class="linea2">
-...que une a dos personas destinadas a encontrarse.
-</p>
+        <svg id="hilo" viewBox="0 0 900 220">
 
-<svg id="svgHilo" viewBox="0 0 800 200">
+            <path id="linea"
+            d="M30 120
+            C120 20 220 220 320 120
+            C420 20 520 220 620 120
+            C720 20 820 220 880 120"/>
 
-<path id="camino"
+        </svg>
 
-d="M20 100
-C100 20 180 180 260 100
-C340 20 430 180 520 100
-C620 20 700 180 780 100"/>
+        <div id="corazon">❤</div>
 
-</svg>
+        <button id="entrar">
+            Comenzar
+        </button>
 
-<div id="heart">
-
-❤
-
-</div>
-
-<button id="entrar">
-
-Comenzar
-
-</button>
-
-</div>
+    </div>
 
 </div>
 
 <header id="portada">
 
-<img src="beso.jpeg">
+    <img src="beso.jpeg" alt="">
 
-<div class="filtro"></div>
+    <div class="capa"></div>
 
-<div class="contenido">
+    <div class="contenido">
 
-<h1>
+        <h1>EL HILO ROJO</h1>
 
-EL HILO ROJO
+        <p>
 
-</h1>
+        Hay historias que parecen empezar un día cualquiera...
 
-<p>
+        pero quizá comenzaron mucho antes de conocerse.
 
-Hay historias que parecen empezar un día cualquiera...
+        </p>
 
-pero quizá comenzaron mucho antes.
+        <a href="#teoria">
 
-</p>
+        Descubrir ↓
 
-<a href="#teoria">
+        </a>
 
-Descubrir
-
-</a>
-
-</div>
+    </div>
 
 </header>
 
 <section id="teoria">
 
-<h2>
-
-La teoría del hilo rojo
-
-</h2>
+<h2>La teoría del hilo rojo</h2>
 
 <p>
 
-Existe una antigua leyenda japonesa que dice que dos personas destinadas a encontrarse están unidas por un hilo rojo invisible.
+Existe una antigua leyenda japonesa que habla de un hilo rojo invisible que une a dos personas destinadas a encontrarse.
 
-Ese hilo puede tensarse.
+Puede tensarse.
 
 Puede enredarse.
 
-Puede parecer desaparecer.
+Puede alejarse.
 
-Pero jamás llega a romperse.
+Pero nunca llega a romperse.
 
-Porque cuando dos personas están destinadas a encontrarse...
+Porque cuando dos almas están destinadas a coincidir...
 
-el hilo siempre termina guiándolas.
+siempre terminan encontrándose.
 
 </p>
 
@@ -118,13 +93,9 @@ el hilo siempre termina guiándolas.
 
 <section id="galeria">
 
-<h2>
+<h2>Nuestra historia</h2>
 
-Nuestra historia
-
-</h2>
-
-<div class="imagenes">
+<div class="grid">
 
 <img src="beso.jpeg">
 
@@ -138,11 +109,7 @@ Nuestra historia
 
 <section id="musica">
 
-<h2>
-
-Nuestra canción
-
-</h2>
+<h2>Nuestra canción</h2>
 
 <a id="spotify" href="#">
 
@@ -152,10 +119,24 @@ Escuchar en Spotify
 
 </section>
 
-<script src="config.js"></script>
+<section id="final">
 
+<h2>❤️</h2>
+
+<p>
+
+Quizá el hilo rojo nunca se vea.
+
+Pero desde que te encontré...
+
+ya no necesito ninguna prueba de que existe.
+
+</p>
+
+</section>
+
+<script src="config.js"></script>
 <script src="script.js"></script>
 
 </body>
-
 </html>
