@@ -1,255 +1,888 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#f8f4ef;
-    color:#3b3028;
-    overflow-x:hidden;
+
+font-family:'Poppins',sans-serif;
+
+background:linear-gradient(180deg,#fffdfb,#f7efe6,#efe5dc);
+
+overflow-x:hidden;
+
+color:#46382e;
+
 }
 
-section{
-    padding:90px 8%;
+/* ===========================
+PETALOS
+=========================== */
+
+#petalos{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:999;
+
 }
 
-h1,h2,h3{
-    font-family:'Cormorant Garamond',serif;
+.petalo{
+
+position:absolute;
+
+width:18px;
+height:18px;
+
+background:#ffd7e3;
+
+border-radius:18px 0 18px 0;
+
+opacity:.75;
+
+animation:caer linear infinite;
+
+filter:blur(.3px);
+
 }
+
+.petalo:nth-child(odd){
+
+background:#ffe8ef;
+
+}
+
+.petalo:nth-child(3n){
+
+background:#ffc4d7;
+
+}
+
+@keyframes caer{
+
+0%{
+
+transform:
+
+translateY(-80px)
+
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+
+translateY(120vh)
+
+translateX(120px)
+
+rotate(720deg);
+
+}
+
+}
+
+/* ===========================
+INTRO
+=========================== */
 
 #loader{
-    width:100%;
-    height:100vh;
-    background:#000;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100vh;
+
+background:
+linear-gradient(180deg,#050505,#111);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:5000;
+
+transition:1s;
+
 }
 
 .intro{
-    width:90%;
-    max-width:700px;
+
+text-align:center;
+
+width:90%;
+
+max-width:800px;
+
+color:white;
+
 }
 
 .intro h3{
-    font-size:2rem;
-    font-weight:400;
-    margin-bottom:40px;
-    animation:fade 2s;
+
+font-family:
+
+'Cormorant Garamond',serif;
+
+font-size:40px;
+
+font-weight:400;
+
+margin-bottom:50px;
+
+letter-spacing:2px;
+
+animation:aparece 2s;
+
 }
 
 #hilo{
-    width:100%;
-    margin:25px 0;
+
+width:100%;
+
+margin:auto;
+
+display:block;
+
 }
 
 #linea{
-    fill:none;
-    stroke:#c50000;
-    stroke-width:4;
-    stroke-dasharray:1000;
-    stroke-dashoffset:1000;
-    animation:draw 5s linear forwards;
+
+fill:none;
+
+stroke:#c70018;
+
+stroke-width:4;
+
+stroke-linecap:round;
+
+stroke-dasharray:1000;
+
+stroke-dashoffset:1000;
+
+animation:
+
+dibujar 5s linear forwards;
+
 }
 
 #corazon{
-    font-size:55px;
-    color:#ff2f5a;
-    opacity:0;
-    animation:heart .8s forwards;
-    animation-delay:5s;
+
+font-size:70px;
+
+margin-top:25px;
+
+opacity:0;
+
+animation:
+
+latido 1s infinite;
+
+animation-delay:5s;
+
+animation-fill-mode:forwards;
+
 }
 
 #entrar{
-    margin-top:40px;
-    padding:16px 40px;
-    border:none;
-    border-radius:40px;
-    background:#b30000;
-    color:white;
-    cursor:pointer;
-    font-size:18px;
-    opacity:0;
-    animation:show 1s forwards;
-    animation-delay:6s;
+
+margin-top:45px;
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:60px;
+
+background:#b70d23;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+letter-spacing:1px;
+
+box-shadow:
+
+0 15px 40px rgba(183,13,35,.35);
+
+opacity:0;
+
+animation:
+
+mostrar 1s forwards;
+
+animation-delay:6s;
+
+transition:.3s;
+
 }
 
 #entrar:hover{
-    background:#8f0000;
+
+transform:
+
+scale(1.08);
+
+background:#9e0018;
+
 }
 
+/* ===========================
+PORTADA
+=========================== */
+
 #portada{
-    position:relative;
-    height:100vh;
+
+position:relative;
+
+height:100vh;
+
+overflow:hidden;
+
 }
 
 #portada img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+animation:
+
+zoom 12s linear infinite alternate;
+
 }
 
 .capa{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.45);
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.15),
+
+rgba(0,0,0,.55)
+
+);
+
+backdrop-filter:blur(2px);
+
 }
 
 .contenido{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
-    padding:30px;
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+color:white;
+
 }
 
 .contenido h1{
-    font-size:70px;
-    letter-spacing:4px;
+
+font-family:
+
+'Cormorant Garamond',serif;
+
+font-size:82px;
+
+letter-spacing:8px;
+
+margin-bottom:25px;
+
+text-shadow:
+
+0 5px 20px rgba(0,0,0,.45);
+
 }
 
 .contenido p{
-    margin-top:25px;
-    max-width:650px;
-    line-height:1.8;
-    font-size:18px;
+
+max-width:700px;
+
+font-size:20px;
+
+line-height:2;
+
+text-shadow:
+
+0 2px 10px black;
+
+margin-bottom:45px;
+
 }
 
 .contenido a{
-    margin-top:50px;
-    color:white;
-    text-decoration:none;
-    border:1px solid white;
-    padding:15px 35px;
-    border-radius:40px;
-    transition:.3s;
+
+text-decoration:none;
+
+padding:18px 42px;
+
+background:white;
+
+color:#8b0a20;
+
+border-radius:50px;
+
+font-weight:600;
+
+transition:.4s;
+
 }
 
 .contenido a:hover{
-    background:white;
-    color:black;
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 20px 40px rgba(255,255,255,.25);
+
+}
+/* ===========================
+TEORÍA
+=========================== */
+
+#teoria{
+
+padding:110px 9%;
+
+}
+
+#teoria h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:58px;
+
+text-align:center;
+
+margin-bottom:50px;
+
+color:#82233a;
+
+}
+
+#teoria p{
+
+max-width:900px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:2.2;
+
+text-align:center;
+
+color:#4c433c;
+
+}
+
+/* ===========================
+GALERÍA
+=========================== */
+
+#galeria{
+
+padding:110px 8%;
+
+}
+
+#galeria h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:58px;
+
+text-align:center;
+
+margin-bottom:60px;
+
+color:#82233a;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:28px;
+
+}
+
+.grid img{
+
+width:100%;
+
+height:420px;
+
+object-fit:cover;
+
+border-radius:22px;
+
+cursor:pointer;
+
+transition:.45s;
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.18);
+
+}
+
+.grid img:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.03);
+
+box-shadow:
+
+0 30px 55px rgba(0,0,0,.22);
+
+}
+
+/* ===========================
+MÚSICA
+=========================== */
+
+#musica{
+
+padding:120px 8%;
+
+text-align:center;
+
+}
+
+#musica h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:56px;
+
+margin-bottom:40px;
+
+color:#82233a;
+
+}
+
+#spotify{
+
+display:inline-block;
+
+padding:20px 50px;
+
+background:linear-gradient(135deg,#1DB954,#16a34a);
+
+color:white;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:600;
+
+border-radius:60px;
+
+transition:.35s;
+
+box-shadow:
+
+0 20px 40px rgba(29,185,84,.30);
+
+}
+
+#spotify:hover{
+
+transform:
+
+scale(1.08);
+
+box-shadow:
+
+0 28px 55px rgba(29,185,84,.45);
+
+}
+
+/* ===========================
+FINAL
+=========================== */
+
+#final{
+
+padding:140px 8%;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#f6efe8,
+
+#efe2d8
+
+);
+
+}
+
+#final h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:60px;
+
+text-align:center;
+
+margin-bottom:35px;
+
+color:#9c102d;
+
+}
+
+#final p{
+
+max-width:850px;
+
+margin:auto;
+
+font-size:21px;
+
+line-height:2.1;
+
+text-align:center;
+
+color:#46382e;
+
+}
+
+/* ===========================
+ANIMACIONES DE SCROLL
+=========================== */
+
+section{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:
+
+1.2s;
+
+}
+/* ===========================
+ANIMACIONES
+=========================== */
+
+@keyframes dibujar{
+
+to{
+
+stroke-dashoffset:0;
+
+}
+
+}
+
+@keyframes mostrar{
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes aparece{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes zoom{
+
+0%{
+
+transform:scale(1);
+
+}
+
+100%{
+
+transform:scale(1.12);
+
+}
+
+}
+
+@keyframes latido{
+
+0%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.25);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ===========================
+SCROLL PERSONALIZADO
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#f3ece5;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#b11230;
+
+border-radius:20px;
+
+}
+
+/* ===========================
+SELECCIÓN DE TEXTO
+=========================== */
+
+::selection{
+
+background:#b11230;
+
+color:white;
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.contenido h1{
+
+font-size:56px;
+
+letter-spacing:4px;
+
+}
+
+.contenido p{
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+.intro h3{
+
+font-size:30px;
+
 }
 
 #teoria h2,
 #galeria h2,
 #musica h2,
 #final h2{
-    text-align:center;
-    font-size:50px;
-    margin-bottom:40px;
+
+font-size:42px;
+
 }
 
 #teoria p,
 #final p{
-    max-width:800px;
-    margin:auto;
-    line-height:2;
-    text-align:center;
-    font-size:18px;
+
+font-size:17px;
+
+line-height:1.9;
+
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+
+grid-template-columns:1fr;
+
 }
 
 .grid img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
-    border-radius:18px;
-    transition:.4s;
-    cursor:pointer;
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
-}
 
-.grid img:hover{
-    transform:scale(1.04);
-}
+height:360px;
 
-#musica{
-    text-align:center;
 }
 
 #spotify{
-    display:inline-block;
-    padding:18px 40px;
-    border-radius:50px;
-    background:#1DB954;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    margin-top:15px;
+
+padding:18px 35px;
+
+font-size:17px;
+
 }
 
-#spotify:hover{
-    transform:scale(1.05);
 }
 
-#final{
-    background:#efe8df;
-}
+@media(max-width:500px){
 
-@keyframes draw{
-    to{
-        stroke-dashoffset:0;
-    }
-}
+.contenido{
 
-@keyframes fade{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
-}
+padding:20px;
 
-@keyframes show{
-    to{
-        opacity:1;
-    }
 }
-
-@keyframes heart{
-    to{
-        opacity:1;
-        transform:scale(1.25);
-    }
-}
-
-@media(max-width:768px){
 
 .contenido h1{
-font-size:46px;
+
+font-size:42px;
+
 }
 
 .contenido p{
+
 font-size:16px;
+
 }
 
-#teoria h2,
-#galeria h2,
-#musica h2,
-#final h2{
-font-size:38px;
+.intro h3{
+
+font-size:25px;
+
+}
+
+#entrar{
+
+width:90%;
+
+max-width:280px;
+
 }
 
 .grid img{
-height:340px;
+
+height:300px;
+
 }
+
+}
+
+/* ===========================
+EFECTO CRISTAL
+=========================== */
+
+#teoria,
+#galeria,
+#musica,
+#final{
+
+backdrop-filter:blur(4px);
+
+}
+
+/* ===========================
+TRANSICIONES
+=========================== */
+
+a,
+button,
+img{
+
+transition:.4s ease;
 
 }
