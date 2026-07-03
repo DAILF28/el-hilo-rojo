@@ -970,3 +970,34 @@ margin-top:20px;
 opacity:1;
 
 }
+#mensaje{
+
+padding:110px 8%;
+
+text-align:center;
+
+}
+
+#mensaje h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:55px;
+
+margin-bottom:35px;
+
+color:#8d0f2c;
+
+}
+
+#mensaje p{
+
+max-width:850px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:2.1;
+
+}
